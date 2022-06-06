@@ -2,6 +2,7 @@ package com.assignment.lms.models;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+//new MongoDB collection --students
 @Document (collection = "students")
 public class Student {
     @Id
