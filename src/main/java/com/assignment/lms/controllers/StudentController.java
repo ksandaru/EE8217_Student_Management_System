@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/student")
+@CrossOrigin(origins = "http://localhost:3000")
 public class StudentController {
     @Autowired
     private StudentRepository studentRepository;
@@ -30,6 +31,7 @@ public class StudentController {
 
 
     @GetMapping("/getAll")
+    @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<?> getStudents(){
         try {
             return ResponseEntity.ok(this.studentRepository.findAll());
@@ -41,6 +43,7 @@ public class StudentController {
 
 
     @DeleteMapping("/{id}")
+    @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<?> deleteStudent(@PathVariable("id") int regNum) {
         try {
             this.studentRepository.findById(regNum);
