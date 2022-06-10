@@ -1,33 +1,24 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
-import Person from "./Person";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import StudentList from "./Components/StudentList";
+import Home from "./Components/Home";
+import StudentAdd from "./Components/StudentAdd";
 
-const App = ()=> {
-    const name = 'Kanishka';
-    const isLoggedIn = true;
-  return (
-      <>
-          <div className="App">
-              <header className="App-header">
-                  <>
-                      <h4>My name is {name}</h4>
-                      {isLoggedIn ? (
-                          <>
-                              <h4>He logged in</h4>
-                          </>
-                      ) : (
-                          <>
-                              <h4>No loggedin user</h4>
-                          </>
-                      )}
-                      <Person/>
-                  </>
+class App extends Component {
+    render() {
+        return (
+            <Router>
+                <Routes>
+                    <Route path='/' element={<Home/>} />
+                    <Route path='/students' element={<StudentList/>} />
+                    <Route path='/students/add' element={<StudentAdd/>} />
+                </Routes>
 
-              </header>
-          </div>
-      </>
 
-  );
+            </Router>
+        )
+    }
 }
 
 export default App;
