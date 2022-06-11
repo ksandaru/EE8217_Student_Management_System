@@ -4,5 +4,5 @@ Student data management system with SpringBoot, MongoDB and React.JS
 | Project       | Branch Name   |
 | ------------- | ------------- |
 |   API         | spring_boot   |
-|   FrontEnd    | react_js      |
+|   FrontEnd    | react_app      |
 
